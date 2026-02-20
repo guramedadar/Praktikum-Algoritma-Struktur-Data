@@ -1,2 +1,2 @@
-# Praktikum-Algoritma-Struktur-Data
-Praktikum Algoritma dan Struktur Data
+# About this repository
+Repositori ini adalah hasil code yang saya pelajari di kampus POLINEMA
