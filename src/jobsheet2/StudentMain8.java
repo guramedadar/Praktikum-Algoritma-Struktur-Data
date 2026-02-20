@@ -15,5 +15,8 @@ public class StudentMain8
         std1.updateIPK(3.60f);
         std1.displayInformation();
         
+        Student std2 = new Student("Annisa Nabila", "2141720160", 3.25f, "TI 2L");
+        std2.updateIPK(3.30f);
+        std2.displayInformation();
     }
 }
