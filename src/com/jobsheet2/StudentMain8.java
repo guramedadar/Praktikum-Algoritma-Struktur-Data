@@ -18,5 +18,8 @@ public class StudentMain8
         Student std2 = new Student("Annisa Nabila", "2141720160", 3.25f, "TI 2L");
         std2.updateIPK(3.30f);
         std2.displayInformation();
+
+        Student stdDeras = new Student("Deras Pangestu Gusti", "254107060114", 3.8f, "LPR2_7T");
+        stdDeras.displayInformation();
     }
 }
