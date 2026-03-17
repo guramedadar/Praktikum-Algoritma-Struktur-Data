@@ -39,10 +39,6 @@ public class LecturerDemo8
         System.out.println("\n=== Youngest Lecturer ===");
         lecturer2.infoTheYoungestLecturer(lecturer1);
 
-
-
-        
-
         sc.close();
     }
 }
