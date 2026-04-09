@@ -8,18 +8,18 @@ public class Assigment
         
         StudentScores student = new StudentScores();
 
-        int maxIdx = student.Highest (student.uts, 0, student.uts.length - 1);
+        int Highest = student.Highest (student.uts, 0, student.uts.length - 1);
         System.out.println("a) Highest Midterm Score (UTS) - Divide & Conquer");
-        System.out.println("   Student : " + student.names[maxIdx]);
-        System.out.println("   NIM     : " + student.nim[maxIdx]);
-        System.out.println("   Score   : " + student.uts[maxIdx]);
+        System.out.println("   Student : " + student.names[Highest]);
+        System.out.println("   NIM     : " + student.nim[Highest]);
+        System.out.println("   Score   : " + student.uts[Highest]);
         System.out.println();
 
-        int minIdx = student.Lowest (student.uts, 0, student.uts.length - 1);
+        int Lowest = student.Lowest (student.uts, 0, student.uts.length - 1);
         System.out.println("b) Lowest Midterm Score (UTS) - Divide & Conquer");
-        System.out.println("   Student : " + student.names[minIdx]);
-        System.out.println("   NIM     : " + student.nim[minIdx]);
-        System.out.println("   Score   : " + student.uts[minIdx]);
+        System.out.println("   Student : " + student.names[Lowest]);
+        System.out.println("   NIM     : " + student.nim[Lowest]);
+        System.out.println("   Score   : " + student.uts[Lowest]);
         System.out.println();
 
         float avg = student.Average(student.uas);
