@@ -1,19 +1,16 @@
 package com.jobsheet7;
 import java.util.Scanner;
-
 public class MergeSort 
 {
     public static void main(String[] args) 
     {
         Scanner sc = new Scanner(System.in);
-
         System.out.println("Sorting with merge sort");
 
         System.out.print("Amount of data: ");
         int n = sc.nextInt();
 
         int[] data = new int[n];
-
         System.out.println("Initial Data");
         for (int i = 0; i < n; i++)
         {
@@ -51,7 +48,6 @@ public class MergeSort
         int a = left;
         int b = middle + 1;
         int c = left;
-
         while (a <= middle && b <= right)
         {
             if (temp[a] <= temp[b])
