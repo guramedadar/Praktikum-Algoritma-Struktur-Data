@@ -11,7 +11,6 @@ public class LecturerData
         idx = 0;
     }
 
-    // Add lecturer to the list
     public void add(Lecturer dsn)
     {
         if (idx < lecturerData.length)
@@ -25,7 +24,6 @@ public class LecturerData
         }
     }
 
-    // Display all lecturers
     public void print()
     {
         if (idx == 0)
@@ -39,7 +37,6 @@ public class LecturerData
         }
     }
 
-    // Sort ASC by age using Bubble Sort (youngest to oldest)
     public void sortingASC()
     {
         for (int i = 0; i < idx - 1; i++)
@@ -56,7 +53,6 @@ public class LecturerData
         }
     }
 
-    // Sort DSC by age using Insertion Sort (oldest to youngest)
     public void sortingDSC()
     {
         for (int i = 1; i < idx; i++)
