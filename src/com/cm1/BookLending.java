@@ -21,6 +21,14 @@ public class BookLending
         fine = overdue * 2000;
     }
 
+    void printLoansEx()
+    {
+        if (loanPeriod > loanLimit) 
+        {
+            System.out.println(sdt.name + " | ");    
+        }
+    }
+
     void printLending() 
     {
         System.out.println(sdt.name + " | " + book.title +

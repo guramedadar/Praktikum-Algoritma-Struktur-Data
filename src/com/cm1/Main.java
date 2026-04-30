@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Main 
 {
-
     static int nimCompare(String a, String b) 
     {
         int lenA = a.length(), lenB = b.length();
@@ -44,9 +43,8 @@ public class Main
 
     static void binarySearchByNIM(BookLending[] loans, String targetNIM) 
     {
-        // Copy and sort by NIM for binary search
         BookLending[] sorted = loans.clone();
-        // Insertion sort by NIM string
+
         for (int i = 1; i < sorted.length; i++) 
         {
             BookLending key = sorted[i];
@@ -82,21 +80,21 @@ public class Main
         }
     }
 
-    public static void main(String[] args) {
-        // --- Data ---
+    public static void main(String[] args) 
+    {
         Student[] students = 
         {
-            new Student("22001", "Andi",  "Informatics Engineering"),
-            new Student("22002", "Budi",  "Informatics Engineering"),
-            new Student("22003", "Citra", "Business Information Systems")
+            new Student("22001", "Andi",  "Informatics Engineering", "A"),
+            new Student("22002", "Budi",  "Informatics Engineering", "B"),
+            new Student("22003", "Citra", "Business Information Systems", "C")
         };
 
         Book[] books = 
         {
-            new Book("B001", "Algorithm",    2020),
-            new Book("B002", "Database",     2019),
-            new Book("B003", "Programming",  2021),
-            new Book("B004", "Physics",      2024)
+            new Book("B001", "Algorithm",    2020, 1),
+            new Book("B002", "Database",     2019, 2),
+            new Book("B003", "Programming",  2021, 3),
+            new Book("B004", "Physics",      2024, 4)
         };
 
         BookLending[] loans = 
@@ -145,6 +143,8 @@ public class Main
                     insertionSort(sorted);
                     System.out.println("\nAfter sorting (Largest fine):");
                     for (BookLending bl : sorted) bl.printLending();
+                    System.out.println("\nWhoose loans term exceeds 5 days:");
+                    for (BookLending bl : sorted) bl.printLoansEx();
                     break;
 
                 case 5:
