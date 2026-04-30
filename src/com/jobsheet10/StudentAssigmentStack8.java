@@ -96,7 +96,7 @@ public class StudentAssigmentStack8
     String convertToBinary (int grade)
     {
         ConversionStack stack = new ConversionStack();
-        while (grade > 0) 
+        while (grade != 0) 
         {
             int mod = grade % 2;
             stack.push(mod);
@@ -106,7 +106,7 @@ public class StudentAssigmentStack8
         String binary = "";
         while (!stack.isEmpty()) 
             binary += stack.pop();
-        
+
         return binary;
     }
 }
