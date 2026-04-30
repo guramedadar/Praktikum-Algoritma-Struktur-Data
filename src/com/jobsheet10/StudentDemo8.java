@@ -19,6 +19,7 @@ public class StudentDemo8
                 "2. Assessing Assignments\n" +
                 "3. View Top Assigment\n" +
                 "4. View the To-Do List\n" +
+                "5. View First Submission\n" +
                 "0. Exit"
             ); 
 
@@ -51,6 +52,9 @@ public class StudentDemo8
                         int value = scan.nextInt();
                         assessed.grading(value);
                         System.out.printf("%s mark for the assignment is %d\n", assessed.name, value);
+
+                        String binary = stack.convertToBinary(value);
+                        System.out.printf("Assigment grade in binary is %s\n", binary);
                     }
                     break;
 
@@ -68,7 +72,15 @@ public class StudentDemo8
                     );
                     stack.print();
                     break;
-                    
+
+                case 5:
+                    Student8 first = stack.firstSubmission();
+                    if (first != null)
+                        System.out.println("First submission by " + first.name + " NIM: " + first.nim);
+                    else
+                        System.out.println("No submissions yet");
+                    break;
+
                 case 0:
                     System.out.println("Thankyou :D");
                     return;
@@ -77,7 +89,7 @@ public class StudentDemo8
                     System.out.println("Invalid selection");
                     continue;
             }
-        } while (select >= 1 && select <= 4);
+        } while (select >= 1 && select <= 5);
 
         scan.close();
     }    
