@@ -21,4 +21,3 @@ public class KRSStudent
         System.out.println(nim + "\t\t" + name + "\t\t\t" + studyProgram + "\t\t\t\t" + className);
     }
 }
-
