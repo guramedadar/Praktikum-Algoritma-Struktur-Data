@@ -1,13 +1,13 @@
 package com.jobsheet12;
 
-public class Student08 
+public class StudentData 
 {
     String  nim,
             name,
             className;
     double  gpa;
 
-    public Student08(String nm, String nama, String kls, double ip)
+    public StudentData (String nm, String nama, String kls, double ip)
     {
         nim         = nm;
         name        = nama;
