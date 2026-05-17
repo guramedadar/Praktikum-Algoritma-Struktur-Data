@@ -61,8 +61,10 @@ public class DoubleLinkedLists
                     temp.next.prev  = newNode;
                     temp.next       = newNode;
                 }
-            }
 
+                return;             // <-- Correct Code (Add return statement)
+            }
+            
             temp = temp.next;
         }
 
@@ -114,6 +116,22 @@ public class DoubleLinkedLists
         }
     }
 
+    void removeLastNoTail()
+    {
+        if(isEmpty())
+            System.out.println("Double linked list is currently empty!!");
+        else if(head.next == null)
+            head = null;
+        else 
+        {
+            Node temp = head;
+            while(temp.next != null)
+                temp = temp.next;
+
+            temp.prev.next = null;
+        }
+    }
+
     void remove (int index)
     {
         if (isEmpty())
@@ -130,6 +148,46 @@ public class DoubleLinkedLists
             if (temp == tail)
                 removeLast();
             else
+            {
+                temp.prev.next = temp.next;
+                temp.next.prev = temp.prev;
+            }
+        }
+    }
+
+    void removeModify (int index)
+    {
+        if(isEmpty())
+        {
+            System.out.println("Double linked list is currently empty!!");
+            return;
+        }
+    
+        if (index < 0) 
+        {
+            System.out.println("Index cannot be negative!");
+            return;
+        }
+        
+        if (index == 0)
+            removeFirst();
+        else 
+        {
+            Node temp = head;
+            int i = 0;
+
+            for(i = 0; i < index && temp != null; i++)
+                temp = temp.next;
+            
+            if(temp == null) 
+            {
+                System.out.println("Index out of bounds! Exceeds list size.");
+                return;
+            }
+            
+            if(temp == tail)
+                removeLast();
+            else 
             {
                 temp.prev.next = temp.next;
                 temp.next.prev = temp.prev;
