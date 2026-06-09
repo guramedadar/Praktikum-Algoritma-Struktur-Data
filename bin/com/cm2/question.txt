@@ -1,0 +1,86 @@
+
+1. Menambah total harga dari seluruh pesanan di case 4
+
+    int totalPrice() 
+    {
+        int total       = 0;
+        NodeOrder tmp   = head;
+
+        while (tmp != null) 
+        {
+            total += tmp.data.price;
+            tmp = tmp.next;
+        }
+
+        return total;
+    }
+
+    System.out.println("Total Revenue: " + totalPrice());
+
+2. Modifikasi case 3 agar bisa memilih nomor hapus antrian
+
+    Buyer removeByQueueNumber(int queueNumber) 
+    {
+        if (isEmpty()) 
+        {
+            System.out.println("Queue is empty!");
+            return null;
+        }
+
+        NodeBuyer tmp = head;
+
+        while (tmp != null) 
+        {
+            if (tmp.data.queueNumber == queueNumber) 
+            {
+                Buyer removed = tmp.data;
+
+                if (tmp == head)
+                    head = head.next;
+                    if (head != null) 
+                        head.prev = null;
+                else if (tmp == tail)
+                    tail = tail.prev;
+                    if (tail != null) 
+                        tail.next = null;
+                else {
+                    tmp.prev.next = tmp.next;
+                    tmp.next.prev = tmp.prev;
+                }
+
+                return removed;
+            }
+
+            tmp = tmp.next;
+        }
+
+        System.out.println("Queue number not found!");
+        return null;
+    }
+
+3. Masukkan inputan nomor sesuai antrian yang mau dihapus
+    
+    case 3:
+        System.out.print("Enter queue number to remove: ");
+        int qNum = sc.nextInt();
+        sc.nextLine();
+
+        Buyer removed = queue.removeByQueueNumber(qNum);
+
+        if (removed != null) 
+        {
+            System.out.print("Order Code: ");
+            int code = sc.nextInt();
+            sc.nextLine();
+            System.out.print("Order Name: ");
+            String orderName = sc.nextLine();
+            System.out.print("Price: ");
+            int price = sc.nextInt();
+            sc.nextLine();
+
+            Order o = new Order(code, orderName, price);
+            orders.addOrder(o);
+
+            System.out.println(removed.name + " has ordered " + orderName);
+        }
+    break;

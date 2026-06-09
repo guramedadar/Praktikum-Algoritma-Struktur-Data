@@ -50,6 +50,29 @@ public class RoyalDelishSystem
                     break;
 
                 case 3:
+                    // System.out.print("Enter queue number to remove: ");
+                    // int qNum = sc.nextInt();
+                    // sc.nextLine();
+                
+                    // Buyer removed = queue.removeQueueByNumber(qNum);
+
+                    // if (removed != null) 
+                    // {
+                    //     System.out.print("Order Code: ");
+                    //     int code = sc.nextInt();
+                    //     sc.nextLine();
+                    //     System.out.print("Order Name: ");
+                    //     String orderName = sc.nextLine();
+                    //     System.out.print("Price: ");
+                    //     int price = sc.nextInt();
+                    //     sc.nextLine();
+
+                    //     Order o = new Order(code, orderName, price);
+                    //     orders.addOrder(o);
+
+                    //     System.out.println(removed.name + " has ordered " + orderName);
+                    // }
+
                     Buyer removed = queue.dequeue();
 
                     if (removed != null) 
@@ -61,17 +84,23 @@ public class RoyalDelishSystem
                         String orderName = sc.nextLine();
                         System.out.print("Price: ");
                         int price = sc.nextInt();
+                        System.out.print("Amount: ");
+                        int amount = sc.nextInt();
                         sc.nextLine();
 
-                        Order o = new Order(code, orderName, price);
+                        Order o = new Order(code, orderName, price, amount);
                         orders.addOrder(o);
 
                         System.out.println(removed.name + " has ordered " + orderName);
+                        System.out.println("Total price: " + (amount * price));
                     }
                     break;
 
                 case 4:
                     orders.printOrders();
+
+                    OrderList total = new OrderList();
+                    System.out.println("\nTotal Revenue: " + total.totalPrice());
                     break;
 
                 case 0:

@@ -66,4 +66,44 @@ public class QueueBuyer
             tmp = tmp.next;
         }
     }
+
+    Buyer removeQueueByNumber (int queueNumber)
+    {
+        if (isEmpty()) 
+        {
+            System.out.println("Queue is empty!");
+            return null;
+        }
+
+        NodeBuyer tmp = head;
+
+        while (tmp != null) 
+        {
+            if (tmp.data.queueNumber == queueNumber) 
+            {
+                Buyer removed = tmp.data;
+
+                if (tmp == head)
+                    head = head.next;
+                    if (head != null) 
+                        head.prev = null;
+                else if (tmp == tail)
+                    tail = tail.prev;
+                    if (tail != null)
+                        tail.next = null;
+                else 
+                {
+                    tmp.prev.next = tmp.next;
+                    tmp.next.prev = tmp.prev;
+                }
+
+                return removed;
+            }
+            
+            tmp = tmp.next;
+        }
+        
+        System.out.println("Queue is not found!");
+        return null;
+    }
 }

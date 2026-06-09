@@ -71,6 +71,20 @@ public class OrderList
             tmp = tmp.next;
         }
     }
+
+    int totalPrice()
+    {
+        int         total   = 0;
+        NodeOrder   tmp     = head;
+
+        while (tmp != null) 
+        {
+            total   += tmp.data.price;
+            tmp     = tmp.next;
+        }
+
+        return total;
+    }
 }
 
 
