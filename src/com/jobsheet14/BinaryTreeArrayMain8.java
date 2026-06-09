@@ -18,5 +18,8 @@ public class BinaryTreeArrayMain8
         bta.populateData(data, data.length - 1);
         System.out.println("In-order traversal:");
         bta.traverseInOrder(0);
+
+        System.out.println("--- Array Tree Pre-Order Traversal ---");
+        bta.traversePreOrder(0);
     }    
 }

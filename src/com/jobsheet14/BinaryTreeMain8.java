@@ -39,5 +39,19 @@ public class BinaryTreeMain8
         bst.delete(3.57);
         System.out.println("Student list after deletion:");
         bst.traverseInOrder(bst.root);
+
+        bst.root = bst.addRekursif(bst.root, new Student8("244107020138", "Devin", "TI-1I", 3.57));
+        bst.root = bst.addRekursif(bst.root, new Student8("244107020023", "Dewi", "TI-1I", 3.85));
+        bst.root = bst.addRekursif(bst.root, new Student8("244107020225", "Wahyu", "TI-1I", 3.21));
+        bst.root = bst.addRekursif(bst.root, new Student8("244107020076", "Angelina", "TI-1I", 3.54));
+        
+        System.out.println("--- Student List (In-Order) ---");
+        bst.traverseInOrder(bst.root);
+
+        bst.getMinIPK();
+        bst.getMaxIPK();
+        System.out.println();
+
+        bst.displayStudentsWithIPKAbove(bst.root, 3.50);
     }
 }

@@ -196,4 +196,64 @@ public class BinaryTree8
             successor.left = current.left;
         }
     }
+
+    public Node8 addRekursif(Node8 current, Student8 data) 
+    {
+        if (current == null)
+            return new Node8(data);
+        
+        if (data.ipk < current.data.ipk) 
+            current.left = addRekursif(current.left, data);
+        else if (data.ipk > current.data.ipk)
+            current.right = addRekursif(current.right, data);
+        
+        return current;
+    }
+
+    public void getMinIPK() 
+    {
+        if (isEmpty()) 
+        {
+            System.out.println("Tree is empty!");
+            return;
+        }
+
+        Node8 current = root;
+
+        while (current.left != null)
+            current = current.left;
+
+        System.out.println("Student with Minimum IPK:");
+        current.data.print();
+    }
+
+    public void getMaxIPK() 
+    {
+        if (isEmpty()) 
+        {
+            System.out.println("Tree is empty!");
+            return;
+        }
+
+        Node8 current = root;
+
+        while (current.right != null)
+            current = current.right;
+
+        System.out.println("Student with Maximum IPK:");
+        current.data.print();
+    }
+
+    public void displayStudentsWithIPKAbove(Node8 node, double threshold) 
+    {
+        if (node != null) 
+        {
+            displayStudentsWithIPKAbove(node.left, threshold);
+            
+            if (node.data.ipk > threshold)
+                node.data.print();
+            
+            displayStudentsWithIPKAbove(node.right, threshold);
+        }
+    }
 }
