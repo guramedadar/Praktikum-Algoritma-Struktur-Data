@@ -68,21 +68,6 @@ public class BinaryTree8
                 current = current.right;
         }
 
-        /*
-            while (current != null)
-            {
-                if (ipk > current.data.ipk) 
-                {
-                    current = current.right;
-                }
-                else if (ipk < current.data.ipk)
-                    current = current.left;
-                else
-                    result = true;
-                    break;
-            }
-        */
-
         return result;
     }
 

@@ -80,7 +80,7 @@ public class DoubleLinkedLists
             
             while (temp != null)
             {
-                temp.data.print();;
+                temp.data.print();
                 temp = temp.next;
             }
 
